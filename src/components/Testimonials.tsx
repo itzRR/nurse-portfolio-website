@@ -47,24 +47,17 @@ export const Testimonials: React.FC = () => {
                 <motion.div
                   key={t.id}
                   initial={{ opacity: 0, scale: 0.95, y: 15 }}
-                  animate={{ 
-                    opacity: 1, 
-                    scale: 1, 
-                    y: [0, -10, 0] // Gentle ocean wave continuous float
-                  }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -15 }}
-                  transition={{ 
-                    y: {
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    },
-                    default: { duration: 0.5 }
-                  }}
+                  transition={{ duration: 0.5 }}
                   className="w-full font-sans"
                 >
-                  {/* Speech Bubble Container (Glassmorphic) */}
-                  <div className="glass-panel p-8 md:p-12 rounded-3xl border border-[#07354d]/10 dark:border-white/5 shadow-md relative text-left select-none bg-white/20 dark:bg-slate-900/10">
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    {/* Speech Bubble Container (Glassmorphic) */}
+                    <div className="glass-panel p-8 md:p-12 rounded-3xl border border-[#07354d]/10 dark:border-white/5 shadow-md relative text-left select-none bg-white/20 dark:bg-slate-900/10">
                     
                     {/* Big Quote mark overlay in waterblue color */}
                     <span className="absolute top-6 left-6 font-serif text-7xl font-bold opacity-10 text-ocean-blue select-none leading-none pointer-events-none">
@@ -116,13 +109,14 @@ export const Testimonials: React.FC = () => {
                     </div>
 
                   </div>
+                  </motion.div>
                 </motion.div>
               );
             })}
           </AnimatePresence>
 
           {/* Left / Right slider toggles */}
-          <div className="absolute bottom-[-60px] md:bottom-[20px] md:right-[40px] flex items-center space-x-4">
+          <div className="absolute bottom-[-60px] md:bottom-[20px] md:right-[40px] flex items-center space-x-4 z-20">
             <button
               onClick={prevTestimonial}
               className="p-3 rounded-full bg-white/20 dark:bg-slate-900/10 border border-[#07354d]/10 dark:border-white/5 text-[#07354d] dark:text-slate-300 hover:bg-slate-100 hover:scale-105 active:scale-95 transition-all duration-350 cursor-pointer shadow-sm"
