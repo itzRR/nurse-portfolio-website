@@ -16,7 +16,7 @@ import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   // Sync dark class on Document element for Tailwind dark mode classes
   useEffect(() => {
