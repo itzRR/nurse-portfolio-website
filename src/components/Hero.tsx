@@ -369,7 +369,7 @@ export const Hero: React.FC = () => {
             >
               <Icon name="HeartPulse" className="text-rose-500 animate-[pulse_1.5s_infinite]" size={14} />
               <div className="flex flex-col text-left">
-                <span className="text-[8px] uppercase font-mono tracking-wider font-extrabold text-slate-700 dark:text-slate-350">HEART RATE</span>
+                <span className="text-[8px] uppercase font-mono tracking-wider font-extrabold text-slate-700 dark:text-slate-300">HEART RATE</span>
                 <span className="text-[10px] font-bold text-[#07354d] dark:text-white">98 BPM (Normal)</span>
               </div>
             </motion.div>
