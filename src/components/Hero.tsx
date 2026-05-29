@@ -153,11 +153,19 @@ export const Hero: React.FC = () => {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
 
+      const isDark = document.documentElement.classList.contains('dark');
+
       // 1. Draw Sky to Sea Gradient Background
       const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-      bgGrad.addColorStop(0, '#E0F2FE'); // light sky blue (representing cloudless horizon)
-      bgGrad.addColorStop(0.5, '#BAE6FD'); // sky blue
-      bgGrad.addColorStop(1, '#0EA5E9'); // sea-blue base
+      if (isDark) {
+        bgGrad.addColorStop(0, '#020617'); // slate-950
+        bgGrad.addColorStop(0.5, '#0f172a'); // slate-900
+        bgGrad.addColorStop(1, '#07354d'); // deep sea base
+      } else {
+        bgGrad.addColorStop(0, '#E0F2FE'); // light sky blue (representing cloudless horizon)
+        bgGrad.addColorStop(0.5, '#BAE6FD'); // sky blue
+        bgGrad.addColorStop(1, '#0EA5E9'); // sea-blue base
+      }
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, width, height);
 
@@ -191,11 +199,11 @@ export const Hero: React.FC = () => {
       };
 
       // Back wave
-      drawWaveLayer(wave2, 'rgba(3, 105, 161, 0.4)'); // Deep Sea Blue
+      drawWaveLayer(wave2, isDark ? 'rgba(3, 105, 161, 0.2)' : 'rgba(3, 105, 161, 0.4)'); // Deep Sea Blue
       // Mid wave
-      drawWaveLayer(wave1, 'rgba(14, 165, 233, 0.65)'); // Ocean Blue
+      drawWaveLayer(wave1, isDark ? 'rgba(14, 165, 233, 0.3)' : 'rgba(14, 165, 233, 0.65)'); // Ocean Blue
       // Front wave (highly reflective)
-      drawWaveLayer(wave3, 'rgba(34, 211, 238, 0.85)'); // Aqua Glow
+      drawWaveLayer(wave3, isDark ? 'rgba(34, 211, 238, 0.4)' : 'rgba(34, 211, 238, 0.85)'); // Aqua Glow
 
       animationFrameId = requestAnimationFrame(render);
     };

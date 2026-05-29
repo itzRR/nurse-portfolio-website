@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
             <a 
               key={item.label}
               href={item.href}
-              className="px-4 py-1.5 text-xs font-light text-slate-705 dark:text-slate-300 tracking-[0.05em] hover:text-ocean-blue dark:hover:text-aqua-glow rounded-full transition-all duration-300 relative group"
+              className="px-4 py-1.5 text-xs font-medium text-slate-800 dark:text-slate-300 tracking-[0.05em] hover:text-ocean-blue dark:hover:text-aqua-glow rounded-full transition-all duration-300 relative group"
             >
               <span className="relative z-10">{item.label}</span>
               <span className="absolute inset-0 bg-ocean-blue/5 dark:bg-sky-blue/5 rounded-full scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300" />
