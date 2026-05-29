@@ -1,0 +1,6 @@
+{
+  "name": "Nurse Portfolio Website",
+  "description": "An ultra-premium, Awwwards-level personal portfolio website for a professional nurse, themed around calmness, healing, ocean, and sky.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
