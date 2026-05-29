@@ -26,7 +26,7 @@ export const Experiences: React.FC = () => {
       className="relative py-24 px-6 overflow-hidden bg-white dark:bg-slate-900 transition-colors duration-500"
     >
       {/* Decorative calm background elements */}
-      <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-sky-blue/20 to-transparent pointer-events-none" />
+
       <div className="absolute top-20 right-20 w-80 h-80 rounded-full bg-sky-blue/5 dark:bg-sky-blue/2 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
